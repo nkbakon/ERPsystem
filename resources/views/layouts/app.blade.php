@@ -28,16 +28,16 @@
                     <div class="mx-auto py-5">
                         <ul>
                             <a href="{{ route('dashboard') }}"><li class="{{ (request()->segment(1) == 'dashboard') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-10 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
-                                <span class="font-semibold"><i class="fa fa-home"></i> Dashboard</span>
+                                <span class="font-semibold"><i class="fa-solid fa-gauge-high"></i> Dashboard</span>
                             </li></a>
-                            <a href=""><li class="{{ (request()->segment(1) == 'users') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
-                                <span class="font-semibold"><i class="fa-solid fa-users"></i> Users</span>
+                            <a href="{{ route('users.index') }}"><li class="{{ (request()->segment(1) == 'users') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
+                                <span class="font-semibold"><i class="fa-solid fa-people-group"></i> Users</span>
                             </li></a>
-                            <a href=""><li class="{{ (request()->segment(1) == 'customers') || (request()->segment(1) == 'suppliers') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
-                                <span class="font-semibold"><i class="fa-sharp fa-solid fa-handshake"></i> Vendors</span>
+                            <a href=""><li class="{{ (request()->segment(1) == 'customers') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
+                                <span class="font-semibold"><i class="fa-solid fa-user-tie"></i> Customers</span>
                             </li></a>
                             <a href=""><li class="{{ (request()->segment(1) == 'reports') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
-                                <span class="font-semibold"><i class="fa-solid fa-chart-line"></i> Reports</span>
+                                <span class="font-semibold"><i class="fa-solid fa-chart-simple"></i> Reports</span>
                             </li></a>
                         </ul>
                     </div>
