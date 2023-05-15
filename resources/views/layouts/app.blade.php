@@ -33,7 +33,7 @@
                             <a href="{{ route('users.index') }}"><li class="{{ (request()->segment(1) == 'users') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-people-group"></i> Users</span>
                             </li></a>
-                            <a href=""><li class="{{ (request()->segment(1) == 'customers') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
+                            <a href="{{ route('customers.index') }}"><li class="{{ (request()->segment(1) == 'customers') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-user-tie"></i> Customers</span>
                             </li></a>
                             <a href=""><li class="{{ (request()->segment(1) == 'reports') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					

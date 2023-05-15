@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AuthController;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\CustomerController;
+use \App\Http\Controllers\DetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +24,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::resource('customers', CustomerController::class);
+
+Route::resource('details', DetailController::class)->except(['update', 'destroy']);
+Route::put('details/district', [DetailController::class, 'districtUpdate'])->name('details.districtUpdate');
+Route::delete('details/district', [DetailController::class, 'districtDestroy'])->name('details.districtDestroy');
 
 Route::resource('users', UserController::class);
