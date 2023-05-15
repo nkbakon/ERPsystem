@@ -5,6 +5,8 @@ use \App\Http\Controllers\AuthController;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\CustomerController;
 use \App\Http\Controllers\DetailController;
+use \App\Http\Controllers\ItemController;
+use \App\Http\Controllers\ItemdetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +27,18 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 Route::resource('customers', CustomerController::class);
+Route::resource('items', ItemController::class);
 
 Route::resource('details', DetailController::class)->except(['update', 'destroy']);
 Route::put('details/district', [DetailController::class, 'districtUpdate'])->name('details.districtUpdate');
 Route::delete('details/district', [DetailController::class, 'districtDestroy'])->name('details.districtDestroy');
+
+Route::resource('itemdetails', ItemdetailsController::class)->except(['update', 'destroy']);
+Route::put('itemdetails/district', [ItemdetailsController::class, 'categoryUpdate'])->name('itemdetails.categoryUpdate');
+Route::delete('itemdetails/district', [ItemdetailsController::class, 'categoryDestroy'])->name('itemdetails.categoryDestroy');
+
+Route::post('itemdetails/shape', [ItemdetailsController::class, 'subcategory'])->name('itemdetails.subcategory');
+Route::put('itemdetails/shape', [ItemdetailsController::class, 'subcategoryUpdate'])->name('itemdetails.subcategoryUpdate');
+Route::delete('itemdetails/shape', [ItemdetailsController::class, 'subcategoryDestroy'])->name('itemdetails.subcategoryDestroy');
 
 Route::resource('users', UserController::class);

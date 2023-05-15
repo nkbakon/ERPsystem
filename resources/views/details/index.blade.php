@@ -84,7 +84,7 @@
                 <span class="sr-only">Close modal</span>
             </button>
             <div class="p-6">
-                <h3 class="mb-5 text-center text-xl font-normal text-gray-700 dark:text-gray-400">Add New Product Type</h3>
+                <h3 class="mb-5 text-center text-xl font-normal text-gray-700 dark:text-gray-400">Add New District</h3>
                 <form method="POST" action="{{ route('details.store') }}">
                     @csrf
                     <div>
