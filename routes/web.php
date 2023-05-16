@@ -8,6 +8,8 @@ use \App\Http\Controllers\DetailController;
 use \App\Http\Controllers\ItemController;
 use \App\Http\Controllers\ItemdetailsController;
 use \App\Http\Controllers\InvoiceController;
+use \App\Http\Controllers\ReportController;
+use \App\Http\Controllers\PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +46,11 @@ Route::put('itemdetails/shape', [ItemdetailsController::class, 'subcategoryUpdat
 Route::delete('itemdetails/shape', [ItemdetailsController::class, 'subcategoryDestroy'])->name('itemdetails.subcategoryDestroy');
 
 Route::resource('users', UserController::class);
+Route::resource('reports', ReportController::class);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', function () {
+        return view('profile.edit');
+    })->name('profile.edit');
+    Route::put('/profile', [PasswordController::class, 'update'])->name('password.update');
+});

@@ -30,9 +30,11 @@
                             <a href="{{ route('dashboard') }}"><li class="{{ (request()->segment(1) == 'dashboard') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-10 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-gauge-high"></i> Dashboard</span>
                             </li></a>
+                            @if (auth()->user()->type == 'Admin')
                             <a href="{{ route('users.index') }}"><li class="{{ (request()->segment(1) == 'users') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-people-group"></i> Users</span>
                             </li></a>
+                            @endif
                             <a href="{{ route('customers.index') }}"><li class="{{ (request()->segment(1) == 'customers') || (request()->segment(1) == 'details') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-user-tie"></i> Customers</span>
                             </li></a>
@@ -40,11 +42,13 @@
                                 <span class="font-semibold"><i class="fa-solid fa-box-open"></i> Items</span>
                             </li></a>
                             <a href="{{ route('invoices.index') }}"><li class="{{ (request()->segment(1) == 'invoices') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
-                                <span class="font-semibold"><i class="fa-solid fa-file-invoice-dollar"></i> Invoice</span>
+                                <span class="font-semibold"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices</span>
                             </li></a>
-                            <a href=""><li class="{{ (request()->segment(1) == 'reports') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
+                            @if (auth()->user()->type == 'Admin')
+                            <a href="{{ route('reports.index') }}"><li class="{{ (request()->segment(1) == 'reports') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-chart-simple"></i> Reports</span>
                             </li></a>
+                            @endif
                         </ul>
                     </div>
                 </div>
