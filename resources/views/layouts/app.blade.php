@@ -39,6 +39,9 @@
                             <a href="{{ route('items.index') }}"><li class="{{ (request()->segment(1) == 'items') || (request()->segment(1) == 'itemdetails') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-box-open"></i> Items</span>
                             </li></a>
+                            <a href="{{ route('invoices.index') }}"><li class="{{ (request()->segment(1) == 'invoices') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
+                                <span class="font-semibold"><i class="fa-solid fa-file-invoice-dollar"></i> Invoice</span>
+                            </li></a>
                             <a href=""><li class="{{ (request()->segment(1) == 'reports') ? 'bg-emerald-700 border-emerald-700': '' }} px-3 py-1 flex space-x-2 mt-5 rounded-md border border-emerald-500 cursor-pointer hover:bg-emerald-600 hover:border-emerald-700">					
                                 <span class="font-semibold"><i class="fa-solid fa-chart-simple"></i> Reports</span>
                             </li></a>

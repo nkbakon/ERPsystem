@@ -36,13 +36,13 @@
     <br>
     <div>
         <label for="quantity">Quantity</label><br>
-        <input type="text" name="quantity" class="block w-96 appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="enter quantity" wire:model="quantity" required>
+        <input type="number" name="quantity" class="block w-96 appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="enter quantity" wire:model="quantity" required>
     </div>
     @error('quantity') <span class="text-red-500 error">{{ $message }}</span><br> @enderror
     <br>
     <div>
         <label for="price">Unit Price</label><br>
-        <input type="text" name="price" class="block w-96 appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="unit price" wire:model="price" required>
+        <input type="number" name="price" class="block w-96 appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="unit price" wire:model="price" required>
     </div>
     @error('price') <span class="text-red-500 error">{{ $message }}</span><br> @enderror
     <br>

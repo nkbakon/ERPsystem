@@ -41,8 +41,8 @@ class CreateForm extends Component
     {   
         $data['code'] = $this->code;
         $data['name'] = $this->name;
-        $data['category'] = $this->category;
-        $data['subcategory'] = $this->subcategory;
+        $data['category_id'] = $this->category;
+        $data['subcategory_id'] = $this->subcategory;
         $data['quantity'] = $this->quantity;
         $data['price'] = $this->price;
         $data['add_by'] = Auth::user()->id;

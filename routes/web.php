@@ -7,6 +7,7 @@ use \App\Http\Controllers\CustomerController;
 use \App\Http\Controllers\DetailController;
 use \App\Http\Controllers\ItemController;
 use \App\Http\Controllers\ItemdetailsController;
+use \App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 Route::resource('customers', CustomerController::class);
 Route::resource('items', ItemController::class);
+Route::resource('invoices', InvoiceController::class);
 
 Route::resource('details', DetailController::class)->except(['update', 'destroy']);
 Route::put('details/district', [DetailController::class, 'districtUpdate'])->name('details.districtUpdate');

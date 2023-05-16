@@ -46,9 +46,12 @@ class Customer extends Model
         return empty($search)
         ? static::query()
         : static::query()->where('id', 'like', '%' . $search . '%')
+            ->orWhere('title', 'like', '%' . $search . '%')
             ->orWhere('fname', 'like', '%' . $search . '%')
+            ->orWhere('lname', 'like', '%' . $search . '%')
             ->orWhere('contact', 'like', '%' . $search . '%')
-            ->orWhere('district', 'like', '%' . $search . '%')
-            ->orWhere('lname', 'like', '%' . $search . '%');
+            ->orWhereHas('district', function($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%');
+            });
     }
 }
